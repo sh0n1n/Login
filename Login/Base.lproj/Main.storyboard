@@ -37,6 +37,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Sn0-O3-eJc">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="166.66666666666666"/>
+                                        <color key="backgroundColor" white="0.87154549319727892" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHz-xR-fA0">
                                         <rect key="frame" x="0.0" y="181.66666666666666" width="333" height="45"/>
@@ -138,8 +139,13 @@
                                         <buttonConfiguration key="configuration" style="plain" title="LOGIN">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                         </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="RCf-eL-h0b" kind="show" id="dI3-Sp-Zeb"/>
+                                            <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bcj-XR-GLz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -160,6 +166,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Signup Here">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signupAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Mt-ds-L0l"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
@@ -187,6 +196,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SuL-Dk-eef"/>
+                    <connections>
+                        <outlet property="dontHaveAccoutLabel" destination="PRC-tV-HcJ" id="clb-uR-2dT"/>
+                        <outlet property="emailLineView" destination="lHz-xR-fA0" id="0NF-11-GJx"/>
+                        <outlet property="emailText" destination="UNb-Xo-mJ6" id="h0y-98-JnG"/>
+                        <outlet property="envelopeImage" destination="nux-LQ-M64" id="WiJ-H0-bOW"/>
+                        <outlet property="lockImage" destination="XlN-f5-O26" id="gZB-Wc-li3"/>
+                        <outlet property="loginButton" destination="36H-xu-9vw" id="tNH-Yc-M1Z"/>
+                        <outlet property="passwordLineView" destination="kgW-O4-5cv" id="tzh-mj-bWR"/>
+                        <outlet property="passwordText" destination="waU-Cl-U4A" id="OJo-Xc-KUf"/>
+                        <outlet property="signupButton" destination="frb-1s-8Wk" id="BOb-rl-rPy"/>
+                        <segue destination="RCf-eL-h0b" kind="show" identifier="goToHomePage" id="I0H-Y5-1Va"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -217,16 +238,16 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
