@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupLoginButton()
+        emailText.delegate = self
+        passwordText.delegate = self
     }
     
     // MARK: - IBActions
@@ -44,5 +46,29 @@ class ViewController: UIViewController {
         loginButton.layer.shadowOffset = CGSize(width: 0, height: 5)
         loginButton.layer.shadowOpacity = 0.5
         loginButton.layer.shadowRadius = 8
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        switch textField {
+        case emailText:
+            print("E-Mail: \(textField.text)")
+        case passwordText:
+            print("Password: \(textField.text)")
+        default:
+            print("Unknown textfield")
+        }
+    }
+    
+    private func checkEmail(email: String) -> Bool {
+        return email.contains("@") && email.contains(".")
+    }
+    
+    private func checkPassword(password:String) -> Bool {
+        let containsUppercase = password.rangeOfCharacter(from: .uppercaseLetters) != nil
+        let containsNumber = password.rangeOfCharacter(from: .decimalDigits) != nil
+        
+        return password.count >= 4 && containsUppercase && containsNumber
     }
 }
