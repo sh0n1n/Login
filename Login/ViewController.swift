@@ -20,7 +20,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var dontHaveAccoutLabel: UILabel!
     @IBOutlet weak var signupButton: UIButton!
     
+    // MARK: - Properties
+    
+    private var activeColor = UIColor(named: "newColor") ?? UIColor.white
+    
     // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +47,7 @@ class ViewController: UIViewController {
     // MARK: - Methods
     
     private func setupLoginButton() {
-        loginButton.layer.shadowColor = (UIColor(named: "newColor") ?? UIColor.white).cgColor
+        loginButton.layer.shadowColor = activeColor.cgColor
         loginButton.layer.shadowOffset = CGSize(width: 0, height: 5)
         loginButton.layer.shadowOpacity = 0.5
         loginButton.layer.shadowRadius = 8
@@ -51,21 +56,37 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        guard let text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+        
         switch textField {
         case emailText:
-            print("E-Mail: \(textField.text)")
+            let isValidEmail = check(email: text)
+            
+            if isValidEmail {
+                // TODO: Save Email
+            } else {
+                envelopeImage.tintColor = activeColor
+                passwordLineView.backgroundColor = activeColor
+            }
         case passwordText:
-            print("Password: \(textField.text)")
+            let isValidPassword = check(password: text)
+            
+            if isValidPassword {
+                // TODO: Save Password
+            } else {
+                lockImage.tintColor = activeColor
+                passwordLineView.backgroundColor = activeColor
+            }
         default:
             print("Unknown textfield")
         }
     }
     
-    private func checkEmail(email: String) -> Bool {
+    private func check(email: String) -> Bool {
         return email.contains("@") && email.contains(".")
     }
     
-    private func checkPassword(password:String) -> Bool {
+    private func check(password:String) -> Bool {
         let containsUppercase = password.rangeOfCharacter(from: .uppercaseLetters) != nil
         let containsNumber = password.rangeOfCharacter(from: .decimalDigits) != nil
         
