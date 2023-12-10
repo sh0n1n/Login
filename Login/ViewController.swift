@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     private var password: String = ""
     
     private let mockEmail = "example01@gmail.com"
-    private let mockPassword = "123345"
+    private let mockPassword = "ExamplePass123"
     
     // MARK: - Life Cycle
     
@@ -114,9 +114,9 @@ extension ViewController: UITextFieldDelegate {
     
     private func check(password:String) -> Bool {
         let containsUppercase = password.rangeOfCharacter(from: .uppercaseLetters) != nil
-        let containsNumber = password.rangeOfCharacter(from: .decimalDigits) != nil
-        
-        return password.count >= 4 && containsUppercase && containsNumber
+            let containsNumberOrSymbol = password.rangeOfCharacter(from: CharacterSet(charactersIn: "0123456789!@#$%^&*()-_=+[{]}|;:'\",<.>/?")) != nil
+
+            return password.count >= 4 && containsUppercase && containsNumberOrSymbol
     }
     
     private func makeErrorField(textField: UITextField) {
