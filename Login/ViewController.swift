@@ -37,6 +37,8 @@ class ViewController: UIViewController {
         setupLoginButton()
         emailText.delegate = self
         passwordText.delegate = self
+        emailText.becomeFirstResponder()
+        
     }
     
     // MARK: - IBActions
