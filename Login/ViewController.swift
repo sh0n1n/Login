@@ -22,10 +22,12 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var activeColor = UIColor(named: "newColor") ?? UIColor.white
+    private let activeColor = UIColor(named: "newColor") ?? UIColor.white
+    private var email: String = ""
+    private var password: String = ""
     
-    private var mockEmail = "example01@gmail.com"
-    private var mockPassword = "123345"
+    private let mockEmail = "example01@gmail.com"
+    private let mockPassword = "123345"
     
     // MARK: - Life Cycle
     
@@ -66,6 +68,7 @@ extension ViewController: UITextFieldDelegate {
             let isValidEmail = check(email: text)
             
             if isValidEmail {
+                email = text
                 // TODO: Save Email
                 envelopeImage.tintColor = .systemGray5
                 emailLineView.backgroundColor = .systemGray5
@@ -77,6 +80,7 @@ extension ViewController: UITextFieldDelegate {
             let isValidPassword = check(password: text)
             
             if isValidPassword {
+                password = text
                 // TODO: Save Password
                 lockImage.tintColor = .systemGray5
                 passwordLineView.backgroundColor = .systemGray5
