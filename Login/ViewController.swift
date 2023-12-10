@@ -46,6 +46,15 @@ class ViewController: UIViewController {
     @IBAction private func loginAction(_ sender: Any) {
         emailText.resignFirstResponder()
         passwordText.resignFirstResponder()
+        
+        if email.isEmpty {
+            makeErrorField(textField: emailText)
+        }
+        
+        if password.isEmpty {
+            makeErrorField(textField: passwordText)
+        }
+        
         if email == mockEmail,
            password == mockPassword {
                performSegue(withIdentifier: "goToHomePage", sender: sender)
@@ -81,8 +90,7 @@ extension ViewController: UITextFieldDelegate {
                 envelopeImage.tintColor = .systemGray5
                 emailLineView.backgroundColor = .systemGray5
             } else {
-                envelopeImage.tintColor = activeColor
-                emailLineView.backgroundColor = activeColor
+                makeErrorField(textField: textField)
             }
         case passwordText:
             let isValidPassword = check(password: text)
@@ -92,9 +100,9 @@ extension ViewController: UITextFieldDelegate {
                 lockImage.tintColor = .systemGray5
                 passwordLineView.backgroundColor = .systemGray5
             } else {
-                lockImage.tintColor = activeColor
-                passwordLineView.backgroundColor = activeColor
+                makeErrorField(textField: textField)
             }
+            
         default:
             print("Unknown textfield")
         }
@@ -109,5 +117,18 @@ extension ViewController: UITextFieldDelegate {
         let containsNumber = password.rangeOfCharacter(from: .decimalDigits) != nil
         
         return password.count >= 4 && containsUppercase && containsNumber
+    }
+    
+    private func makeErrorField(textField: UITextField) {
+        switch textField {
+        case emailText:
+            envelopeImage.tintColor = activeColor
+            emailLineView.backgroundColor = activeColor
+        case passwordText:
+            lockImage.tintColor = activeColor
+            passwordLineView.backgroundColor = activeColor
+        default:
+            print("Unknown TextField")
+        }
     }
 }
