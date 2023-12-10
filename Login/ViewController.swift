@@ -42,6 +42,8 @@ class ViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction private func loginAction(_ sender: Any) {
+        emailText.resignFirstResponder()
+        passwordText.resignFirstResponder()
         if email == mockEmail,
            password == mockPassword {
                performSegue(withIdentifier: "goToHomePage", sender: sender)
@@ -57,7 +59,7 @@ class ViewController: UIViewController {
     // MARK: - Methods
     
     private func setupLoginButton() {
-        loginButton.layer.shadowColor = activeColor.cgColor
+        loginButton.layer.shadowColor = UIColor.tertiaryLabel.cgColor
         loginButton.layer.shadowOffset = CGSize(width: 0, height: 5)
         loginButton.layer.shadowOpacity = 0.5
         loginButton.layer.shadowRadius = 8
