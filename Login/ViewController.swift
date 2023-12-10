@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     
     private var activeColor = UIColor(named: "newColor") ?? UIColor.white
     
+    private var mockEmail = "example01@gmail.com"
+    private var mockPassword = "123345"
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -56,7 +59,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        guard let text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+        guard let text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !text.isEmpty else { return }
         
         switch textField {
         case emailText:
@@ -64,15 +67,19 @@ extension ViewController: UITextFieldDelegate {
             
             if isValidEmail {
                 // TODO: Save Email
+                envelopeImage.tintColor = .systemGray5
+                emailLineView.backgroundColor = .systemGray5
             } else {
                 envelopeImage.tintColor = activeColor
-                passwordLineView.backgroundColor = activeColor
+                emailLineView.backgroundColor = activeColor
             }
         case passwordText:
             let isValidPassword = check(password: text)
             
             if isValidPassword {
                 // TODO: Save Password
+                lockImage.tintColor = .systemGray5
+                passwordLineView.backgroundColor = .systemGray5
             } else {
                 lockImage.tintColor = activeColor
                 passwordLineView.backgroundColor = activeColor
