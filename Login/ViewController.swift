@@ -42,7 +42,12 @@ class ViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction private func loginAction(_ sender: Any) {
-        performSegue(withIdentifier: "goToHomePage", sender: sender)
+        if email == mockEmail,
+           password == mockPassword {
+               performSegue(withIdentifier: "goToHomePage", sender: sender)
+           } else {
+               // TODO: Show Error
+           }
     }
     
     @IBAction private func signupAction(_ sender: Any) {
@@ -69,7 +74,6 @@ extension ViewController: UITextFieldDelegate {
             
             if isValidEmail {
                 email = text
-                // TODO: Save Email
                 envelopeImage.tintColor = .systemGray5
                 emailLineView.backgroundColor = .systemGray5
             } else {
@@ -81,7 +85,6 @@ extension ViewController: UITextFieldDelegate {
             
             if isValidPassword {
                 password = text
-                // TODO: Save Password
                 lockImage.tintColor = .systemGray5
                 passwordLineView.backgroundColor = .systemGray5
             } else {
