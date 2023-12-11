@@ -23,8 +23,18 @@ class ViewController: UIViewController {
     // MARK: - Properties
     
     private let activeColor = UIColor(named: "newColor") ?? UIColor.white
-    private var email: String = ""
-    private var password: String = ""
+    private var email: String = "" {
+        didSet {
+            loginButton.isUserInteractionEnabled = !(email.isEmpty || password.isEmpty)
+            loginButton.backgroundColor = !(email.isEmpty || password.isEmpty) ? activeColor : .systemGray5
+        }
+    }
+    private var password: String = "" {
+        didSet {
+            loginButton.isUserInteractionEnabled = !(email.isEmpty || password.isEmpty)
+            loginButton.backgroundColor = !(email.isEmpty || password.isEmpty) ? activeColor : .systemGray5
+        }
+    }
     
     private let mockEmail = "example01@gmail.com"
     private let mockPassword = "ExamplePass123"
@@ -79,6 +89,9 @@ class ViewController: UIViewController {
         loginButton.layer.shadowOffset = CGSize(width: 0, height: 5)
         loginButton.layer.shadowOpacity = 0.5
         loginButton.layer.shadowRadius = 8
+        
+        loginButton.isUserInteractionEnabled = false
+        loginButton.backgroundColor = .systemGray5
     }
 }
 
@@ -95,6 +108,7 @@ extension ViewController: UITextFieldDelegate {
                 envelopeImage.tintColor = .systemGray5
                 emailLineView.backgroundColor = .systemGray5
             } else {
+                email = ""
                 makeErrorField(textField: textField)
             }
         case passwordText:
@@ -105,6 +119,7 @@ extension ViewController: UITextFieldDelegate {
                 lockImage.tintColor = .systemGray5
                 passwordLineView.backgroundColor = .systemGray5
             } else {
+                password = ""
                 makeErrorField(textField: textField)
             }
             
