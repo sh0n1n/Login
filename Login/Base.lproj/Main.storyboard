@@ -220,12 +220,44 @@
                     <view key="view" contentMode="scaleToFill" id="Uw5-eM-xZT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcf-os-TGX">
+                                <rect key="frame" x="63.666666666666657" y="396" width="266" height="60"/>
+                                <color key="tintColor" white="0.87154549319999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <color key="textColor" white="0.87154549319999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAd-sc-SzB">
+                                <rect key="frame" x="156" y="483" width="81" height="35"/>
+                                <color key="backgroundColor" red="0.92128556969999997" green="0.048835364470000003" blue="0.14217044170000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="LogOut">
+                                    <color key="baseForegroundColor" red="0.0" green="0.95875126123428345" blue="0.99654549360275269" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logOutButton:" destination="aR4-D5-EHx" eventType="touchUpInside" id="XAb-hX-upq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="20G-02-LRJ"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                        <constraints>
+                            <constraint firstItem="Pcf-os-TGX" firstAttribute="centerY" secondItem="Uw5-eM-xZT" secondAttribute="centerY" id="6wa-fS-gLC"/>
+                            <constraint firstItem="Pcf-os-TGX" firstAttribute="centerX" secondItem="Uw5-eM-xZT" secondAttribute="centerX" id="UiD-f6-JIe"/>
+                            <constraint firstItem="RAd-sc-SzB" firstAttribute="centerX" secondItem="Uw5-eM-xZT" secondAttribute="centerX" id="mh7-8G-Pdc"/>
+                            <constraint firstItem="RAd-sc-SzB" firstAttribute="top" secondItem="Pcf-os-TGX" secondAttribute="bottom" constant="27" id="v26-Dl-X2s"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FmI-jL-Wpo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjg-yh-S3z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="aR4-D5-EHx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="824" y="4"/>
         </scene>
@@ -242,9 +274,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
