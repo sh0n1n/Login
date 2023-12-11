@@ -220,8 +220,32 @@
                     <view key="view" contentMode="scaleToFill" id="Uw5-eM-xZT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXG-fm-0vT">
+                                <rect key="frame" x="81.333333333333329" y="396" width="230.66666666666669" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <color key="textColor" white="0.87154549319999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ke-3O-1q4">
+                                <rect key="frame" x="138" y="489" width="117" height="44"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="LogOut">
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="25"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="20G-02-LRJ"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                        <constraints>
+                            <constraint firstItem="wXG-fm-0vT" firstAttribute="centerX" secondItem="Uw5-eM-xZT" secondAttribute="centerX" id="7Oe-he-OrK"/>
+                            <constraint firstItem="4ke-3O-1q4" firstAttribute="centerX" secondItem="Uw5-eM-xZT" secondAttribute="centerX" id="rZU-eB-RQh"/>
+                            <constraint firstItem="4ke-3O-1q4" firstAttribute="top" secondItem="wXG-fm-0vT" secondAttribute="bottom" constant="33" id="rfB-fR-9sR"/>
+                            <constraint firstItem="wXG-fm-0vT" firstAttribute="centerY" secondItem="Uw5-eM-xZT" secondAttribute="centerY" id="u2A-3A-0dm"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FmI-jL-Wpo"/>
                 </viewController>
@@ -242,9 +266,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
