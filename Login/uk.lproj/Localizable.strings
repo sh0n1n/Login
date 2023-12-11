@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Login
+
+  Created by Melkor on 12/11/23.
+  
+*/
+"Error" = "Помилка";
+"Wrong E-Mail or Password" = "Неправильна адреса чи пароль";
+"OK" = "ОК/Добре";
+

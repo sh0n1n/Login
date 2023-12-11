@@ -1,0 +1,21 @@
+
+/* Class = "UIButton"; configuration.title = "LOGIN"; ObjectID = "36H-xu-9vw"; */
+"36H-xu-9vw.configuration.title" = "LOGIN";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "36H-xu-9vw"; */
+"36H-xu-9vw.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Don't Have an account?"; ObjectID = "PRC-tV-HcJ"; */
+"PRC-tV-HcJ.text" = "Don't Have an account?";
+
+/* Class = "UITextField"; placeholder = "E-Mail"; ObjectID = "UNb-Xo-mJ6"; */
+"UNb-Xo-mJ6.placeholder" = "E-Mail";
+
+/* Class = "UIButton"; configuration.title = "Signup Here"; ObjectID = "frb-1s-8Wk"; */
+"frb-1s-8Wk.configuration.title" = "Signup Here";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "frb-1s-8Wk"; */
+"frb-1s-8Wk.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "waU-Cl-U4A"; */
+"waU-Cl-U4A.placeholder" = "Password";
